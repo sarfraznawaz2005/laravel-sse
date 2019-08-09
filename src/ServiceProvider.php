@@ -40,8 +40,8 @@ class ServiceProvider extends BaseServiceProvider
         $this->mergeConfigFrom(__DIR__ . '/Config/config.php', 'sse');
 
         // Register the service the package provides.
-        $this->app->singleton('sse', function () {
-            return $this->app->make(Noty::class);
+        $this->app->singleton('SSE', function () {
+            return $this->app->make(SSE::class);
         });
     }
 
