@@ -13,20 +13,28 @@ class ServiceProvider extends BaseServiceProvider
      */
     public function boot()
     {
+        if (!$this->app->routesAreCached()) {
+            require __DIR__ . '/Http/routes.php';
+        }
+
         $this->loadViewsFrom(__DIR__ . '/Views', 'sse');
 
         // Publishing is only necessary when using the CLI.
         if ($this->app->runningInConsole()) {
-
-            // Publishing the configuration file.
+            // Publish the configuration file.
             $this->publishes([
                 __DIR__ . '/Config/config.php' => config_path('sse.php'),
             ], 'sse.config');
 
-            // Publishing the views.
+            // Publish the views.
             $this->publishes([
                 __DIR__ . '/Views' => base_path('resources/views/vendor/sse'),
             ], 'sse.views');
+
+            // Publish the migrations.
+            $this->publishes([
+                __DIR__ . '/Migrations' => database_path('migrations')
+            ]);
         }
     }
 
@@ -43,15 +51,5 @@ class ServiceProvider extends BaseServiceProvider
         $this->app->singleton('SSE', function () {
             return $this->app->make(SSE::class);
         });
-    }
-
-    /**
-     * Get the services provided by the provider.
-     *
-     * @return array
-     */
-    public function provides()
-    {
-        return ['SSE'];
     }
 }
