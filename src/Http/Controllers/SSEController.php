@@ -61,6 +61,6 @@ class SSEController extends BaseController
             sleep(config('sse.interval'));
         });
 
-        return $response;
+        return $response->send();
     }
 }

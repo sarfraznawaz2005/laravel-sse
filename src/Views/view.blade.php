@@ -6,7 +6,7 @@
     <script>
         if (window.EventSource !== undefined) {
 
-            var es = new EventSource("{{route('__sse_notify__')}}");
+            var es = new EventSource("{{route('__sse_stream__')}}");
 
             es.addEventListener("message", function (e) {
 

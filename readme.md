@@ -105,7 +105,7 @@ Then you need to handle this in your view yourself like this:
 
 ```javascript
 <script>
-var es = new EventSource("{{route('__sse_notify__')}}");
+var es = new EventSource("{{route('__sse_stream__')}}");
 
 es.addEventListener("UserLoggedIn", function (e) {
     var data = JSON.parse(e.data);

@@ -7,6 +7,6 @@ Route::group(
     ],
     static function () {
 
-        Route::get('notify', 'SSEController@stream')->name('__sse_notify__');
+        Route::get('notify', 'SSEController@stream')->name('__sse_stream__');
     }
 );
