@@ -20,11 +20,11 @@ class SSELog extends Model
      * Saves SSE event in database table.
      *
      * @param $message
-     * @param $event
      * @param $type
+     * @param $event
      * @return bool
      */
-    public function saveEvent($message, $event, $type): bool
+    public function saveEvent($message, $type, $event): bool
     {
         $this->deleteProcessed();
 

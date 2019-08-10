@@ -54,10 +54,10 @@ Syntax:
 ```php
 /**
  * @param string $message : notification message
- * @param string $event : Type of event such as "EmailSent", "UserLoggedIn", etc
  * @param string $type : alert, success, error, warning, info
+ * @param string $event : Type of event such as "EmailSent", "UserLoggedIn", etc
  */
-SSEFacade::notify($message, $event = 'message', $type = 'info')
+SSEFacade::notify($message, $type = 'info', $event = 'message')
 ```
 
 To show popup notifications on the screen, in your controllers/event classes, you can  do:
@@ -84,7 +84,7 @@ By default, pacakge uses `message` event type for streaming response:
 
 
 ```php
-SSEFacade::notify($message, $event = 'message', $type = 'info')
+SSEFacade::notify($message, $type = 'info', $event = 'message')
 ```
 
 Notice `$event = 'message'`. You can customize this, let's say you want to use `UserLoggedIn` as SSE event type:
@@ -94,10 +94,10 @@ use Sarfraznawaz2005\SSE\Facades\SSEFacade;
 
 public function myMethod()
 {
-    SSEFacade::notify('hello world....', 'UserLoggedIn');
+    SSEFacade::notify('hello world....', 'info', 'UserLoggedIn');
     
     // or via helper
-    sse_notify('hi there', 'UserLoggedIn');
+    sse_notify('hi there', 'info', 'UserLoggedIn');
 }
 ```
 

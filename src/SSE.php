@@ -20,12 +20,12 @@ class SSE
      * Notify SSE event.
      *
      * @param string $message : notification message
-     * @param string $event : Type of event such as "EmailSent", "UserLoggedIn", etc
      * @param string $type : alert, success, error, warning, info
+     * @param string $event : Type of event such as "EmailSent", "UserLoggedIn", etc
      * @return bool
      */
-    public function notify($message, $event = 'message', $type = 'info'): bool
+    public function notify($message, $type = 'info', $event = 'message'): bool
     {
-        return $this->SSELog->saveEvent($message, $event, $type);
+        return $this->SSELog->saveEvent($message, $type, $event);
     }
 }

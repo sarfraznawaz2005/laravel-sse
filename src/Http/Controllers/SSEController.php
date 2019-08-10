@@ -39,7 +39,7 @@ class SSEController extends BaseController
 
                 $data = json_encode([
                     'message' => $model->message,
-                    'type' => $model->type,
+                    'type' => strtolower($model->type),
                     'time' => date('H:i:s A', strtotime($model->created_at)),
                 ]);
 

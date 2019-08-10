@@ -1,6 +1,12 @@
 <?php
 
-Route::group(['prefix' => 'sse'], static function () {
-    Route::get('notify', \Sarfraznawaz2005\SSE\Http\Controllers\SSEController::class)->name('__sse_notify__');
-});
+Route::group(
+    [
+        'namespace' => 'Sarfraznawaz2005\SSE\Http\Controllers',
+        'prefix' => 'sse'
+    ],
+    static function () {
 
+        Route::get('notify', 'SSEController')->name('__sse_notify__');
+    }
+);
