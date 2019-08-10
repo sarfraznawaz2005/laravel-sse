@@ -22,8 +22,9 @@
                         text: data.message + '<br><small>' + data.time + '</small>',
                         type: data.type,
                         theme: "metroui",
+                        closeWith: "button",
                         layout: "{{config('sse.position')}}",
-                        timeout: {{config('sse.timeout') ? 'true' : 'false'}},
+                        timeout: {{config('sse.timeout') ? 'true' : 'false'}}
                     }).show();
                 }
 
