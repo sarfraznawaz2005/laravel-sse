@@ -18,7 +18,8 @@
     "Server",
     "Event",
     "Realtime",
-    "Polling"
+    "Polling",
+    "Notifications"
   ],
   "require": {
     "php": "^7.0",
