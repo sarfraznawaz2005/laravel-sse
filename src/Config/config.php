@@ -6,10 +6,10 @@ return [
     'enabled' => env('SSE_ENABLED', true),
 
     // polling interval in seconds between requests
-    'interval' => env('SSE_INTERVAL', 5),
+    'interval' => env('SSE_INTERVAL', 15),
 
     // append logged user id in SSE response
-    'append_user_id' => env('SSE_APPEND_USER_ID', 5),
+    'append_user_id' => env('SSE_APPEND_USER_ID', true),
 
     // keep events log in database
     'keep_events_logs' => env('SSE_KEEP_EVENTS_LOGS', false),
