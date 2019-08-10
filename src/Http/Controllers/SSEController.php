@@ -14,7 +14,7 @@ class SSEController extends BaseController
      * @param SSELog $SSELog
      * @return StreamedResponse
      */
-    public function __invoke(SSELog $SSELog)
+    public function stream(SSELog $SSELog)
     {
         $response = new StreamedResponse();
 
