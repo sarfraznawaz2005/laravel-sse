@@ -20,6 +20,7 @@ class CreateSSELogsTable extends Migration
             $table->string('event', 50);
             $table->string('type', 50);
             $table->enum('delivered', [0, 1])->default(0);
+            $table->string('client', 50)->nullable();
             $table->timestamps();
         });
     }
