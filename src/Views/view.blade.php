@@ -13,11 +13,6 @@
 
             es.addEventListener("message", function (e) {
 
-                if (e.origin != '{{config('app.url')}}') {
-                    console.log('Origin was not {{config('app.url')}}');
-                    return;
-                }
-
                 var data = JSON.parse(e.data);
 
                 if (data.message) {
