@@ -115,11 +115,6 @@ es.addEventListener("UserLoggedIn", function (e) {
 </script>
 ```
 
-## Note
-
-[Server Sent Events](https://en.wikipedia.org/wiki/Server-sent_events) technology  consumes server resources so use it sparingly or better use Web Sockets instead.
-
-
 ## Credits
 
 - [Sarfraz Ahmed][link-author]
