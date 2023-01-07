@@ -22,7 +22,7 @@
     "Notifications"
   ],
   "require": {
-    "php": "^7.0",
+    "php": "^7.0|^8.0",
     "illuminate/support": "~5|~6|~7|~8|~9"
   },
   "autoload": {
